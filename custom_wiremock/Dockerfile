@@ -1,12 +1,10 @@
 FROM openjdk:8
 
 ENV WM_PACKAGE wiremock-jre8
-ENV WM_VERSION 2.35.0
 
 RUN mkdir /$WM_PACKAGE
 WORKDIR /$WM_PACKAGE
-RUN curl -sSL -o $WM_PACKAGE.jar https://repo1.maven.org/maven2/com/github/tomakehurst/$WM_PACKAGE-standalone/$WM_VERSION/$WM_PACKAGE-standalone-$WM_VERSION.jar
-
+COPY bin/wiremock-jre8-standalone-2.35.0.jar $WM_PACKAGE.jar
 COPY resources/__files /$WM_PACKAGE/__files
 COPY resources/mappings /$WM_PACKAGE/mappings
 

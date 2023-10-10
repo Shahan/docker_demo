@@ -1,0 +1,11 @@
+{
+    "request": {
+      "method": "GET",
+      "urlPath": "/violets/are/"
+    },
+    "response": {
+      "status": 200,
+      "body": "violet"
+    }
+  }
+  

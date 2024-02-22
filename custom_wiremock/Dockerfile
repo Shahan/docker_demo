@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-ENV WM_PACKAGE wiremock-jre8
+ENV WM_PACKAGE wiremock
 
 RUN mkdir /$WM_PACKAGE
 WORKDIR /$WM_PACKAGE
@@ -10,4 +10,4 @@ COPY resources/mappings /$WM_PACKAGE/mappings
 
 EXPOSE 8443 8080
 
-ENTRYPOINT java -jar $WM_PACKAGE.jar --port 8080 --https-port 8443 > log.txt
+ENTRYPOINT java -jar $WM_PACKAGE.jar --port 8080 --https-port 8443 1> std.log 2>error.log
